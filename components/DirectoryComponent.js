@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { FlatList } from "react-native";
 import { ListItem } from "react-native-elements";
-import { CAMPSITES } from "../shared/campsites";
+
+import { GAMELIST } from "../shared/gamelist";
 
 class Directory extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      campsites: CAMPSITES,
+      gamelist: GAMELIST,
     };
   }
 
@@ -21,16 +22,16 @@ class Directory extends Component {
       return (
         <ListItem
           title={item.name}
-          subtitle={item.description}
+          subtitle={item.console}
           onPress={() => navigate("CampsiteInfo", { campsiteId: item.id })}
-          leftAvatar={{ source: require("./images/react-lake.jpg") }}
+          leftAvatar={{ source: require("./images/psxIcon.png") }}
         />
       );
     };
 
     return (
       <FlatList
-        data={this.state.campsites}
+        data={this.state.gamelist}
         renderItem={renderDirectoryItem}
         keyExtractor={(item) => item.id.toString()}
       />

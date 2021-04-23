@@ -1,18 +1,19 @@
 import React, { Component } from "react";
 import { Text, View } from "react-native";
 import { Card, Icon } from "react-native-elements";
-import { CAMPSITES } from "../shared/campsites";
+
+import { GAMELIST } from "../shared/gamelist";
 
 function RenderCampsite(props) {
-  const { campsite } = props;
+  const { gamelist } = props;
 
-  if (campsite) {
+  if (gamelist) {
     return (
       <Card
-        featuredTitle={campsite.name}
-        image={require("./images/react-lake.jpg")}
+        featuredTitle={gamelist.name}
+        image={require("./images/castlevaniaSOTNCover.jpg")}
       >
-        <Text style={{ margin: 10 }}>{campsite.description}</Text>
+        <Text style={{ margin: 10 }}>{gamelist.console}</Text>
         <Icon
           name={props.favorite ? "heart" : "heart-o"}
           type="font-awesome"
@@ -35,14 +36,14 @@ class CampsiteInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      campsites: CAMPSITES,
+      gamelist: GAMELIST,
 
       favorite: false,
     };
   }
 
   static navigationOptions = {
-    title: "Campsite Information",
+    title: "Game Information",
   };
 
   markFavorite() {
@@ -51,12 +52,12 @@ class CampsiteInfo extends Component {
 
   render() {
     const campsiteId = this.props.navigation.getParam("campsiteId");
-    const campsite = this.state.campsites.filter(
-      (campsite) => campsite.id === campsiteId
+    const campsite = this.state.gamelist.filter(
+      (gamelist) => gamelist.id === campsiteId
     )[0];
     return (
       <RenderCampsite
-        campsite={campsite}
+        gamelist={campsite}
         favorite={this.state.favorite}
         markFavorite={() => this.markFavorite()}
       />
