@@ -178,6 +178,7 @@ const MainNavigator = createDrawerNavigator(
         ),
       },
     },
+
     Contact: {
       screen: ContactNavigator,
       navigationOptions: {

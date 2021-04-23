@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { ScrollView, Text, FlatList, View } from "react-native";
-import { Card, ListItem } from "react-native-elements";
+import { ScrollView, Text, View } from "react-native";
+import { Card } from "react-native-elements";
 
 function Mission() {
   return (

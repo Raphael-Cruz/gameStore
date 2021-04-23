@@ -14,6 +14,8 @@ function RenderCampsite(props) {
         image={require("./images/castlevaniaSOTNCover.jpg")}
       >
         <Text style={{ margin: 10 }}>{gamelist.console}</Text>
+        <Text style={{ margin: 10 }}>{gamelist.year}</Text>
+        <Text style={{ margin: 10 }}>{gamelist.genre}</Text>
         <Icon
           name={props.favorite ? "heart" : "heart-o"}
           type="font-awesome"
