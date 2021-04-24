@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Text, View } from "react-native";
 import { Card, Icon } from "react-native-elements";
-
+import { baseUrl } from "../shared/baseUrl";
 import { GAMELIST } from "../shared/gamelist";
 
 function RenderCampsite(props) {
@@ -11,7 +11,7 @@ function RenderCampsite(props) {
     return (
       <Card
         featuredTitle={gamelist.name}
-        image={require("./images/castlevaniaSOTNCover.jpg")}
+        image={{ uri: baseUrl + gamelist.image }}
       >
         <Text style={{ margin: 10 }}>{gamelist.console}</Text>
         <Text style={{ margin: 10 }}>{gamelist.year}</Text>
