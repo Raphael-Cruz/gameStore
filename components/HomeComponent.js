@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { FlatList } from "react-native";
 import { View } from "react-native";
-import { ListItem } from "react-native-elements";
+import { ListItem, Card } from "react-native-elements";
 import { HOMELIST } from "../shared/homelist";
-
+import { GAMELIST } from "../shared/gamelist";
 import { baseUrl } from "../shared/baseUrl";
 import { ScrollView } from "react-native-gesture-handler";
 
@@ -12,6 +12,7 @@ class Home extends Component {
     super(props);
     this.state = {
       homelist: HOMELIST,
+      gamelist: GAMELIST,
     };
   }
 
@@ -21,14 +22,23 @@ class Home extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
-    const renderHomeItem = ({ item }) => {
+    const renderHomeConsoles = ({ item }) => {
       return (
         <ListItem
           title={item.console}
-          style={{ flex: 0 }}
-          horizontal={true}
+          containerStyle={{
+            paddingTop: 40,
+            paddingBottom: 40,
+            backgroundColor: "#dee2e6",
+          }}
           onPress={() => navigate("GameFiltred", { consoleInfo: item.type })}
-          leftAvatar={{ source: { uri: baseUrl + item.image } }}
+          leftAvatar={{
+            source: { uri: baseUrl + item.image },
+            containerStyle: {
+              height: 60,
+              width: 60,
+            },
+          }}
         />
       );
     };
@@ -36,15 +46,45 @@ class Home extends Component {
     return (
       <ScrollView>
         <FlatList
-          style={{ paddingTop: "3%" }}
+          style={{ paddingTop: "5%" }}
           data={this.state.homelist}
           horizontal={true}
-          renderItem={renderHomeItem}
+          renderItem={renderHomeConsoles}
           keyExtractor={(item) => item.id.toString()}
         />
+        <View>
+          <FlatList
+            style={{ paddingTop: "5%" }}
+            data={this.state.gamelist}
+            horizontal={false}
+            renderItem={renderHomeGames}
+            keyExtractor={(item) => item.id.toString()}
+          />
+        </View>
       </ScrollView>
     );
   }
 }
+
+const renderHomeGames = ({ item }) => {
+  return (
+    <ScrollView>
+      <Card containerStyle={{ padding: 10, backgroundColor: "#dee2e6" }}>
+        <ListItem
+          title={item.name}
+          style={{ flex: 1, backgroundColor: "#dee2e6" }}
+          onPress={() => navigate("CampsiteInfo", { campsiteId: item.id })}
+          leftAvatar={{
+            source: { uri: baseUrl + item.image },
+            containerStyle: {
+              height: 120,
+              width: 120,
+            },
+          }}
+        />
+      </Card>
+    </ScrollView>
+  );
+};
 
 export default Home;

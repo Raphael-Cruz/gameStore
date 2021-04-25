@@ -17,4 +17,22 @@ export const GAMELIST = [
     type: "PSX",
     year: "Year: 1999",
   },
+  {
+    id: 3,
+    name: "Resident Evil 3: Nemesis ",
+    image: "images/residentEvil3Cover.jpg",
+    genre: "Genre: Survivor Horror",
+    console: "Console: PSX",
+    type: "PSX",
+    year: "Year: 1999",
+  },
+  {
+    id: 4,
+    name: "Parasite Eve",
+    image: "images/parasiteEveCover.jpg",
+    genre: "Genre: Action, Adventure, Role-Playing",
+    console: "Console: PSX",
+    type: "PSX",
+    year: "Year: 1998",
+  },
 ];

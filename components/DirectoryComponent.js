@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FlatList } from "react-native";
-import { ListItem } from "react-native-elements";
+import { ListItem, Card } from "react-native-elements";
+import { baseUrl } from "../shared/baseUrl";
 
 import { GAMELIST } from "../shared/gamelist";
 
@@ -24,7 +25,13 @@ class Directory extends Component {
           title={item.name}
           subtitle={item.console}
           onPress={() => navigate("CampsiteInfo", { campsiteId: item.id })}
-          leftAvatar={{ source: require("./images/psxIcon.png") }}
+          leftAvatar={{
+            source: { uri: baseUrl + item.image },
+            containerStyle: {
+              height: 200,
+              width: 200,
+            },
+          }}
         />
       );
     };
