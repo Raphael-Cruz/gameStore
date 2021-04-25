@@ -5,6 +5,7 @@ export const GAMELIST = [
     image: "images/castlevaniaSOTNCover.jpg",
     genre: "Genre: Action-Adventure",
     console: "Console: PSX",
+    type: "PSX",
     year: "Year: 1997",
   },
   {
@@ -13,6 +14,7 @@ export const GAMELIST = [
     image: "images/granTurismoCover.jpg",
     genre: "Genre: Driving/Racing, Simulation",
     console: "Console: PSX",
+    type: "PSX",
     year: "Year: 1999",
   },
 ];
