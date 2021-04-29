@@ -1,6 +1,6 @@
 export const SNES = [
   {
-    id: 0,
+    id: 10,
     name: "Mickey and Donald - Magical Adventure 3",
     image: "images/mickeyDonaldCover.jpg",
     genre: "Genre: Action-Adventure",
@@ -9,7 +9,7 @@ export const SNES = [
     year: "Year: 1995",
   },
   {
-    id: 1,
+    id: 11,
     name: "Final Fantasy VI ",
     image: "images/finalFantasyVICover.jpg",
     genre: "Genre: Role-Playing",
@@ -18,7 +18,7 @@ export const SNES = [
     year: "Year:  1994",
   },
   {
-    id: 3,
+    id: 12,
     name: "Super Ghols 'n Ghost",
     image: "images/superGhoulsNGhostsCover.jpg",
     genre: "Genre:  Action Side-Scrolling Platform",
@@ -27,7 +27,7 @@ export const SNES = [
     year: "Year: 1991",
   },
   {
-    id: 4,
+    id: 13,
     name: "Super Metroid",
     image: "images/superMetroidCover.jpg",
     genre: "Genre: Action, Adventure",
@@ -36,7 +36,7 @@ export const SNES = [
     year: "Year: 1994",
   },
   {
-    id: 5,
+    id: 14,
     name: "Wild Guns",
     image: "images/WIldGunsCover.jpg",
     genre: "Genre:  Space Western Shooting Gallery",

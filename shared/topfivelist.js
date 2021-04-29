@@ -1,15 +1,15 @@
 export const TOPFIVE = [
   {
     id: 1,
-    name: "Golden Axe II ",
-    image: "images/goldenAxeIICover.jpg",
-    genre: "Genre: Side-Scrolling Beat 'em Up",
-    console: "Console: Mega Drive",
-    type: "MegaDrive",
-    year: "Year: 1991",
+    name: "Gran Turismo ",
+    image: "images/granTurismoCover.jpg",
+    genre: "Genre: Driving/Racing, Simulation",
+    console: "Console: PSX",
+    type: "PSX",
+    year: "Year: 1999",
   },
   {
-    id: 2,
+    id: 11,
     name: "Final Fantasy VI ",
     image: "images/finalFantasyVICover.jpg",
     genre: "Genre: Role-Playing",
@@ -18,7 +18,7 @@ export const TOPFIVE = [
     year: "Year:  1994",
   },
   {
-    id: 3,
+    id: 4,
     name: "Parasite Eve",
     image: "images/parasiteEveCover.jpg",
     genre: "Genre: Action, Adventure, Role-Playing",
@@ -27,7 +27,7 @@ export const TOPFIVE = [
     year: "Year: 1998",
   },
   {
-    id: 4,
+    id: 0,
     name: "Castlevania Symphony Of The Night",
     image: "images/castlevaniaSOTNCover.jpg",
     genre: "Genre: Action-Adventure",
@@ -36,7 +36,7 @@ export const TOPFIVE = [
     year: "Year: 1997",
   },
   {
-    id: 5,
+    id: 14,
     name: "Wild Guns",
     image: "images/WIldGunsCover.jpg",
     genre: "Genre:  Space Western Shooting Gallery",

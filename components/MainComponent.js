@@ -36,10 +36,9 @@ const GamesNavigator = createStackNavigator(
         ),
       }),
     },
-    CampsiteInfo: { screen: CampsiteInfo },
-    MegadriveInfo: { screen: Megadrive },
-    PsxInfo: { screen: Psx },
-    SnesInfo: { screen: Snes },
+    CampsiteInfo: {
+      screen: CampsiteInfo,
+    },
   },
   {
     initialRouteName: "Games",
@@ -58,7 +57,13 @@ const GamesNavigator = createStackNavigator(
 const HomeNavigator = createStackNavigator(
   {
     Home: { screen: Home },
+    MegadriveInfo: {
+      screen: Megadrive,
+    },
+    PsxInfo: { screen: Psx },
+    SnesInfo: { screen: Snes },
   },
+
   {
     defaultNavigationOptions: ({ navigation }) => ({
       headerStyle: {
