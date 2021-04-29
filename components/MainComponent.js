@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Home from "./HomeComponent";
-import Directory from "./DirectoryComponent";
+import Games from "./GamesComponent";
 import CampsiteInfo from "./CampsiteInfoComponent";
 import {
   View,
@@ -17,11 +17,14 @@ import { createAppContainer } from "react-navigation";
 import SafeAreaView from "react-native-safe-area-view";
 import About from "./AboutComponent";
 import Contact from "./ContactComponent";
+import Megadrive from "./MegaDriveComponent";
+import Psx from "./PsxComponent";
+import Snes from "./SnesComponent";
 
-const DirectoryNavigator = createStackNavigator(
+const GamesNavigator = createStackNavigator(
   {
-    Directory: {
-      screen: Directory,
+    Games: {
+      screen: Games,
       navigationOptions: ({ navigation }) => ({
         headerRight: (
           <Icon
@@ -34,9 +37,12 @@ const DirectoryNavigator = createStackNavigator(
       }),
     },
     CampsiteInfo: { screen: CampsiteInfo },
+    MegadriveInfo: { screen: Megadrive },
+    PsxInfo: { screen: Psx },
+    SnesInfo: { screen: Snes },
   },
   {
-    initialRouteName: "Directory",
+    initialRouteName: "Games",
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: "#ff7900",
@@ -156,8 +162,8 @@ const MainNavigator = createDrawerNavigator(
         ),
       },
     },
-    Directory: {
-      screen: DirectoryNavigator,
+    Games: {
+      screen: GamesNavigator,
       navigationOptions: {
         drawerIcon: ({ tintColor }) => (
           <Icon name="list" type="font-awesome" size={24} color={tintColor} />

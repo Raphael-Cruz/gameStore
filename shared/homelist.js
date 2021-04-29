@@ -11,7 +11,7 @@ export const HOMELIST = [
   },
   {
     id: 2,
-    image: "images/masterSystemIcon.jpeg",
-    console: "Master System",
+    image: "images/megadrivecover.jpeg",
+    console: "Megadrive",
   },
 ];

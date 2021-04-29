@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { FlatList } from "react-native";
-import { ListItem, Card } from "react-native-elements";
+import { ListItem } from "react-native-elements";
 import { baseUrl } from "../shared/baseUrl";
 
 import { GAMELIST } from "../shared/gamelist";
 
-class Directory extends Component {
+class Games extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,12 +14,12 @@ class Directory extends Component {
   }
 
   static navigationOptions = {
-    title: "Directory",
+    title: "Games",
   };
 
   render() {
     const { navigate } = this.props.navigation;
-    const renderDirectoryItem = ({ item }) => {
+    const renderGamesItem = ({ item }) => {
       return (
         <ListItem
           title={item.name}
@@ -39,11 +39,11 @@ class Directory extends Component {
     return (
       <FlatList
         data={this.state.gamelist}
-        renderItem={renderDirectoryItem}
+        renderItem={renderGamesItem}
         keyExtractor={(item) => item.id.toString()}
       />
     );
   }
 }
 
-export default Directory;
+export default Games;

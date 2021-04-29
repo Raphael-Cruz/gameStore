@@ -3,7 +3,7 @@ import { FlatList } from "react-native";
 import { View } from "react-native";
 import { ListItem, Card } from "react-native-elements";
 import { HOMELIST } from "../shared/homelist";
-import { GAMELIST } from "../shared/gamelist";
+import { TOPFIVE } from "../shared/topfivelist";
 import { baseUrl } from "../shared/baseUrl";
 import { ScrollView } from "react-native-gesture-handler";
 
@@ -12,7 +12,7 @@ class Home extends Component {
     super(props);
     this.state = {
       homelist: HOMELIST,
-      gamelist: GAMELIST,
+      topfive: TOPFIVE,
     };
   }
 
@@ -22,6 +22,27 @@ class Home extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
+    const renderHomeGames = ({ item }) => {
+      return (
+        <ScrollView>
+          <Card containerStyle={{ padding: 10, backgroundColor: "#dee2e6" }}>
+            <ListItem
+              title={item.name}
+              style={{ flex: 1, backgroundColor: "#dee2e6" }}
+              onPress={() => navigate("CampsiteInfo", { campsiteId: item.id })}
+              leftAvatar={{
+                source: { uri: baseUrl + item.image },
+                containerStyle: {
+                  height: 120,
+                  width: 120,
+                },
+              }}
+            />
+          </Card>
+        </ScrollView>
+      );
+    };
+
     const renderHomeConsoles = ({ item }) => {
       return (
         <ListItem
@@ -31,7 +52,18 @@ class Home extends Component {
             paddingBottom: 40,
             backgroundColor: "#dee2e6",
           }}
-          onPress={() => navigate("GameFiltred", { consoleInfo: item.type })}
+          onPress={() => {
+            if (item.console === "PSX") {
+              console.log("psx");
+              navigate("PsxInfo", { PsxInfo: item.console });
+            } else if (item.console === "SNES") {
+              console.log("Snes!");
+              navigate("SnesInfo", { SnesInfo: item.console });
+            } else if (item.console === "Megadrive") {
+              navigate("MegadriveInfo", { MegadriveInfo: item.console });
+              console.log("Mega!");
+            }
+          }}
           leftAvatar={{
             source: { uri: baseUrl + item.image },
             containerStyle: {
@@ -50,12 +82,12 @@ class Home extends Component {
           data={this.state.homelist}
           horizontal={true}
           renderItem={renderHomeConsoles}
-          keyExtractor={(item) => item.id.toString()}
+          keyExtractor={(item) => item.console}
         />
         <View>
           <FlatList
             style={{ paddingTop: "5%" }}
-            data={this.state.gamelist}
+            data={this.state.topfive}
             horizontal={false}
             renderItem={renderHomeGames}
             keyExtractor={(item) => item.id.toString()}
@@ -65,26 +97,5 @@ class Home extends Component {
     );
   }
 }
-
-const renderHomeGames = ({ item }) => {
-  return (
-    <ScrollView>
-      <Card containerStyle={{ padding: 10, backgroundColor: "#dee2e6" }}>
-        <ListItem
-          title={item.name}
-          style={{ flex: 1, backgroundColor: "#dee2e6" }}
-          onPress={() => navigate("CampsiteInfo", { campsiteId: item.id })}
-          leftAvatar={{
-            source: { uri: baseUrl + item.image },
-            containerStyle: {
-              height: 120,
-              width: 120,
-            },
-          }}
-        />
-      </Card>
-    </ScrollView>
-  );
-};
 
 export default Home;
