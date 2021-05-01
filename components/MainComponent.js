@@ -20,6 +20,7 @@ import Contact from "./ContactComponent";
 import Megadrive from "./MegaDriveComponent";
 import Psx from "./PsxComponent";
 import Snes from "./SnesComponent";
+import Constants from "expo-constants";
 
 const GamesNavigator = createStackNavigator(
   {
@@ -219,8 +220,7 @@ class Main extends Component {
       <View
         style={{
           flex: 1,
-          paddingTop:
-            Platform.OS === "ios" ? 0 : Expo.Constants.statusBarHeight,
+          paddingTop: Platform.OS === "ios" ? 0 : Constants.StatusBarHeight,
         }}
       >
         <AppNavigator />
