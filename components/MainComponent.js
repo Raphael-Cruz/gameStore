@@ -63,6 +63,7 @@ const HomeNavigator = createStackNavigator(
     },
     PsxInfo: { screen: Psx },
     SnesInfo: { screen: Snes },
+    Games: { screen: Games },
   },
 
   {

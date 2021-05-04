@@ -19,6 +19,11 @@ class Games extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
+    const console = this.props.navigation.getParam("console");
+    const data = console
+      ? this.state.gamelist.filter((game) => game.type === console)
+      : this.state.gamelist;
+
     const renderGamesItem = ({ item }) => {
       return (
         <ListItem
@@ -38,7 +43,7 @@ class Games extends Component {
 
     return (
       <FlatList
-        data={this.state.gamelist}
+        data={data}
         renderItem={renderGamesItem}
         keyExtractor={(item) => item.id.toString()}
       />

@@ -53,16 +53,7 @@ class Home extends Component {
             backgroundColor: "#dee2e6",
           }}
           onPress={() => {
-            if (item.console === "PSX") {
-              console.log("psx");
-              navigate("PsxInfo", { PsxInfo: item.console });
-            } else if (item.console === "SNES") {
-              console.log("Snes!");
-              navigate("SnesInfo", { SnesInfo: item.console });
-            } else if (item.console === "Megadrive") {
-              navigate("MegadriveInfo", { MegadriveInfo: item.console });
-              console.log("Mega!");
-            }
+            navigate("Games", { console: item.console });
           }}
           leftAvatar={{
             source: { uri: baseUrl + item.image },
