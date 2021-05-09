@@ -17,11 +17,7 @@ import { createAppContainer } from "react-navigation";
 import SafeAreaView from "react-native-safe-area-view";
 import About from "./AboutComponent";
 import Contact from "./ContactComponent";
-import Megadrive from "./MegaDriveComponent";
-import Psx from "./PsxComponent";
-import Snes from "./SnesComponent";
 import Constants from "expo-constants";
-
 const GamesNavigator = createStackNavigator(
   {
     Games: {
@@ -58,11 +54,7 @@ const GamesNavigator = createStackNavigator(
 const HomeNavigator = createStackNavigator(
   {
     Home: { screen: Home },
-    MegadriveInfo: {
-      screen: Megadrive,
-    },
-    PsxInfo: { screen: Psx },
-    SnesInfo: { screen: Snes },
+
     Games: { screen: Games },
   },
 
